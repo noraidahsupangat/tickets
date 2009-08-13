@@ -1,0 +1,383 @@
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (234.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (234.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateClientWorkouts (20090805040202)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "client_workouts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "client_name" varchar(255), "trainer" varchar(255), "duration_mins" integer, "date_of_workout" date, "paid_amount" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090805040202')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("client_workouts")[0m
+
+
+Processing ClientWorkoutsController#index (for 127.0.0.1 at 2009-08-05 12:10:44) [GET]
+  [4;36;1mClientWorkout Load (1.0ms)[0m   [0;1mSELECT * FROM "client_workouts" [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/index
+Completed in 2412ms (View: 2403, DB: 1) | 200 OK [http://localhost/client_workouts]
+
+
+Processing ClientWorkoutsController#new (for 127.0.0.1 at 2009-08-05 12:10:54) [GET]
+Rendering template within layouts/client_workouts
+Rendering client_workouts/new
+Completed in 428ms (View: 417, DB: 0) | 200 OK [http://localhost/client_workouts/new]
+
+
+Processing ClientWorkoutsController#create (for 127.0.0.1 at 2009-08-05 12:11:15) [POST]
+  Parameters: {"commit"=>"Create", "client_workout"=>{"client_name"=>"noraidah", "trainer"=>"akmal", "paid_amount"=>"100", "duration_mins"=>"20", "date_of_workout(1i)"=>"2009", "date_of_workout(2i)"=>"8", "date_of_workout(3i)"=>"5"}, "authenticity_token"=>"22mbvc5v6a+DGho1WM4MJ+3v6shh0SNALASSQ9mqAJk="}
+  [4;35;1mClientWorkout Create (1.0ms)[0m   [0mINSERT INTO "client_workouts" ("updated_at", "client_name", "trainer", "paid_amount", "duration_mins", "date_of_workout", "created_at") VALUES('2009-08-05 04:11:15', 'noraidah', 'akmal', 100.0, 20, '2009-08-05', '2009-08-05 04:11:15')[0m
+Redirected to http://localhost:3000/client_workouts/1
+Completed in 230ms (DB: 1) | 302 Found [http://localhost/client_workouts]
+
+
+Processing ClientWorkoutsController#show (for 127.0.0.1 at 2009-08-05 12:11:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mClientWorkout Load (0.0ms)[0m   [0;1mSELECT * FROM "client_workouts" WHERE ("client_workouts"."id" = 1) [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/show
+Completed in 23ms (View: 12, DB: 0) | 200 OK [http://localhost/client_workouts/1]
+
+
+Processing ClientWorkoutsController#index (for 127.0.0.1 at 2009-08-05 12:11:21) [GET]
+  [4;35;1mClientWorkout Load (1.0ms)[0m   [0mSELECT * FROM "client_workouts" [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/index
+Completed in 17ms (View: 8, DB: 1) | 200 OK [http://localhost/client_workouts]
+
+
+Processing ClientWorkoutsController#new (for 127.0.0.1 at 2009-08-05 12:11:24) [GET]
+Rendering template within layouts/client_workouts
+Rendering client_workouts/new
+Completed in 23ms (View: 14, DB: 0) | 200 OK [http://localhost/client_workouts/new]
+
+
+Processing ClientWorkoutsController#create (for 127.0.0.1 at 2009-08-05 12:11:39) [POST]
+  Parameters: {"commit"=>"Create", "client_workout"=>{"client_name"=>"iffah rukiah", "trainer"=>"salmah", "paid_amount"=>"200", "duration_mins"=>"33", "date_of_workout(1i)"=>"2009", "date_of_workout(2i)"=>"8", "date_of_workout(3i)"=>"5"}, "authenticity_token"=>"22mbvc5v6a+DGho1WM4MJ+3v6shh0SNALASSQ9mqAJk="}
+  [4;36;1mClientWorkout Create (1.0ms)[0m   [0;1mINSERT INTO "client_workouts" ("updated_at", "client_name", "trainer", "paid_amount", "duration_mins", "date_of_workout", "created_at") VALUES('2009-08-05 04:11:39', 'iffah rukiah', 'salmah', 200.0, 33, '2009-08-05', '2009-08-05 04:11:39')[0m
+Redirected to http://localhost:3000/client_workouts/2
+Completed in 97ms (DB: 1) | 302 Found [http://localhost/client_workouts]
+
+
+Processing ClientWorkoutsController#show (for 127.0.0.1 at 2009-08-05 12:11:39) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mClientWorkout Load (0.0ms)[0m   [0mSELECT * FROM "client_workouts" WHERE ("client_workouts"."id" = 2) [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/show
+Completed in 16ms (View: 5, DB: 0) | 200 OK [http://localhost/client_workouts/2]
+
+
+Processing ClientWorkoutsController#index (for 127.0.0.1 at 2009-08-05 12:11:41) [GET]
+  [4;36;1mClientWorkout Load (1.0ms)[0m   [0;1mSELECT * FROM "client_workouts" [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/index
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/client_workouts]
+
+
+Processing ClientWorkoutsController#new (for 127.0.0.1 at 2009-08-05 12:12:42) [GET]
+Rendering template within layouts/client_workouts
+Rendering client_workouts/new
+Completed in 22ms (View: 13, DB: 0) | 200 OK [http://localhost/client_workouts/new]
+
+
+Processing ClientWorkoutsController#create (for 127.0.0.1 at 2009-08-05 12:12:54) [POST]
+  Parameters: {"commit"=>"Create", "client_workout"=>{"client_name"=>"danish", "trainer"=>"saaa", "paid_amount"=>"666", "duration_mins"=>"21", "date_of_workout(1i)"=>"2009", "date_of_workout(2i)"=>"8", "date_of_workout(3i)"=>"5"}, "authenticity_token"=>"22mbvc5v6a+DGho1WM4MJ+3v6shh0SNALASSQ9mqAJk="}
+  [4;35;1mClientWorkout Create (1.0ms)[0m   [0mINSERT INTO "client_workouts" ("updated_at", "client_name", "trainer", "paid_amount", "duration_mins", "date_of_workout", "created_at") VALUES('2009-08-05 04:12:54', 'danish', 'saaa', 666.0, 21, '2009-08-05', '2009-08-05 04:12:54')[0m
+Redirected to http://localhost:3000/client_workouts/3
+Completed in 308ms (DB: 1) | 302 Found [http://localhost/client_workouts]
+
+
+Processing ClientWorkoutsController#show (for 127.0.0.1 at 2009-08-05 12:12:54) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mClientWorkout Load (0.0ms)[0m   [0;1mSELECT * FROM "client_workouts" WHERE ("client_workouts"."id" = 3) [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/show
+Completed in 16ms (View: 5, DB: 0) | 200 OK [http://localhost/client_workouts/3]
+
+
+Processing ClientWorkoutsController#show (for 127.0.0.1 at 2009-08-05 12:17:23) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mClientWorkout Load (0.0ms)[0m   [0mSELECT * FROM "client_workouts" WHERE ("client_workouts"."id" = 3) [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/show
+Completed in 16ms (View: 5, DB: 0) | 200 OK [http://localhost/client_workouts/3]
+
+
+Processing ClientWorkoutsController#index (for 127.0.0.1 at 2009-08-05 12:17:26) [GET]
+  [4;36;1mClientWorkout Load (1.0ms)[0m   [0;1mSELECT * FROM "client_workouts" [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/index
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/client_workouts]
+
+
+Processing ClientWorkoutsController#new (for 127.0.0.1 at 2009-08-05 12:17:30) [GET]
+Rendering template within layouts/client_workouts
+Rendering client_workouts/new
+Completed in 23ms (View: 13, DB: 0) | 200 OK [http://localhost/client_workouts/new]
+
+
+Processing ClientWorkoutsController#index (for 127.0.0.1 at 2009-08-05 12:17:33) [GET]
+  [4;35;1mClientWorkout Load (1.0ms)[0m   [0mSELECT * FROM "client_workouts" [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/index
+Completed in 72ms (View: 10, DB: 1) | 200 OK [http://localhost/client_workouts]
+
+
+Processing ClientWorkoutsController#index (for 127.0.0.1 at 2009-08-05 12:17:39) [GET]
+  [4;36;1mClientWorkout Load (1.0ms)[0m   [0;1mSELECT * FROM "client_workouts" [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/index
+Completed in 24ms (View: 13, DB: 1) | 200 OK [http://localhost/client_workouts]
+
+
+Processing ClientWorkoutsController#index (for 127.0.0.1 at 2009-08-05 12:18:11) [GET]
+  [4;35;1mClientWorkout Load (1.0ms)[0m   [0mSELECT * FROM "client_workouts" [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/index
+Completed in 25ms (View: 16, DB: 1) | 200 OK [http://localhost/client_workouts]
+
+
+Processing ClientWorkoutsController#new (for 127.0.0.1 at 2009-08-05 12:18:19) [GET]
+Rendering template within layouts/client_workouts
+Rendering client_workouts/new
+Completed in 25ms (View: 13, DB: 0) | 200 OK [http://localhost/client_workouts/new]
+
+
+Processing ClientWorkoutsController#index (for 127.0.0.1 at 2009-08-05 12:18:33) [GET]
+  [4;36;1mClientWorkout Load (1.0ms)[0m   [0;1mSELECT * FROM "client_workouts" [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/index
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/client_workouts]
+
+
+Processing ClientWorkoutsController#index (for 127.0.0.1 at 2009-08-05 12:24:00) [GET]
+  [4;35;1mClientWorkout Load (1.0ms)[0m   [0mSELECT * FROM "client_workouts" [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/index
+Completed in 19ms (View: 10, DB: 1) | 200 OK [http://localhost/client_workouts]
+
+
+Processing ClientWorkoutsController#find (for 127.0.0.1 at 2009-08-05 12:24:11) [POST]
+  Parameters: {"search_string"=>"noraidah", "commit"=>"Search", "authenticity_token"=>"22mbvc5v6a+DGho1WM4MJ+3v6shh0SNALASSQ9mqAJk="}
+
+ActionView::MissingTemplate (Missing template client_workouts/find.erb in view path app/views):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ClientWorkoutsController#index (for 127.0.0.1 at 2009-08-05 12:24:14) [GET]
+  [4;36;1mClientWorkout Load (1.0ms)[0m   [0;1mSELECT * FROM "client_workouts" [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/index
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/client_workouts]
+
+
+Processing ClientWorkoutsController#new (for 127.0.0.1 at 2009-08-05 12:24:16) [GET]
+Rendering template within layouts/client_workouts
+Rendering client_workouts/new
+Completed in 23ms (View: 13, DB: 0) | 200 OK [http://localhost/client_workouts/new]
+
+
+Processing ClientWorkoutsController#index (for 127.0.0.1 at 2009-08-05 12:24:18) [GET]
+  [4;35;1mClientWorkout Load (1.0ms)[0m   [0mSELECT * FROM "client_workouts" [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/index
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/client_workouts]
+
+
+Processing ClientWorkoutsController#index (for 127.0.0.1 at 2009-08-05 12:28:17) [GET]
+  [4;36;1mClientWorkout Load (1.0ms)[0m   [0;1mSELECT * FROM "client_workouts" [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/index
+Completed in 24ms (View: 15, DB: 1) | 200 OK [http://localhost/client_workouts]
+
+
+Processing ClientWorkoutsController#find (for 127.0.0.1 at 2009-08-05 12:28:24) [POST]
+  Parameters: {"search_string"=>"noraidah", "commit"=>"Search", "authenticity_token"=>"22mbvc5v6a+DGho1WM4MJ+3v6shh0SNALASSQ9mqAJk="}
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `find_all_by_clent_name' for #<Class:0x4311a74>):
+  app/controllers/client_workouts_controller.rb:6:in `find'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (55.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ClientWorkoutsController#find (for 127.0.0.1 at 2009-08-05 12:33:35) [POST]
+  Parameters: {"search_string"=>"noraidah", "commit"=>"Search", "authenticity_token"=>"22mbvc5v6a+DGho1WM4MJ+3v6shh0SNALASSQ9mqAJk="}
+  [4;36;1mClientWorkout Load (0.0ms)[0m   [0;1mSELECT * FROM "client_workouts" WHERE (client_name = 'noraidah' or trainer = 'noraidah') [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/find
+Completed in 23ms (View: 14, DB: 0) | 200 OK [http://localhost/client_workouts/find]
+
+
+Processing ClientWorkoutsController#find (for 127.0.0.1 at 2009-08-05 12:33:59) [POST]
+  Parameters: {"search_string"=>"akmal", "commit"=>"Search", "authenticity_token"=>"22mbvc5v6a+DGho1WM4MJ+3v6shh0SNALASSQ9mqAJk="}
+  [4;35;1mClientWorkout Load (1.0ms)[0m   [0mSELECT * FROM "client_workouts" WHERE (client_name = 'akmal' or trainer = 'akmal') [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/find
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/client_workouts/find]
+
+
+Processing ClientWorkoutsController#show (for 127.0.0.1 at 2009-08-05 12:34:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mClientWorkout Load (0.0ms)[0m   [0;1mSELECT * FROM "client_workouts" WHERE ("client_workouts"."id" = 1) [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/show
+Completed in 16ms (View: 6, DB: 0) | 200 OK [http://localhost/client_workouts/1]
+
+
+Processing ClientWorkoutsController#index (for 127.0.0.1 at 2009-08-05 12:34:05) [GET]
+  [4;35;1mClientWorkout Load (1.0ms)[0m   [0mSELECT * FROM "client_workouts" [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/index
+Completed in 81ms (View: 72, DB: 1) | 200 OK [http://localhost/client_workouts]
+
+
+Processing ClientWorkoutsController#index (for 127.0.0.1 at 2009-08-05 21:48:07) [GET]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `validate_presence_of' for #<Class:0x5b44a60>):
+  app/models/client_workout.rb:3
+  app/controllers/client_workouts_controller.rb:9:in `index'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (65.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ClientWorkoutsController#new (for 127.0.0.1 at 2009-08-05 21:48:16) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `validate_presence_of' for #<Class:0x49856bc>):
+  app/models/client_workout.rb:3
+  app/controllers/client_workouts_controller.rb:31:in `new'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (116.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ClientWorkoutsController#new (for 127.0.0.1 at 2009-08-05 21:50:34) [GET]
+Rendering template within layouts/client_workouts
+Rendering client_workouts/new
+Completed in 3265ms (View: 3256, DB: 0) | 200 OK [http://localhost/client_workouts/new]
+
+
+Processing ClientWorkoutsController#create (for 127.0.0.1 at 2009-08-05 21:52:39) [POST]
+  Parameters: {"commit"=>"Create", "client_workout"=>{"client_name"=>"ggg", "trainer"=>"bbb", "paid_amount"=>"50", "duration_mins"=>"12", "date_of_workout(1i)"=>"2009", "date_of_workout(2i)"=>"8", "date_of_workout(3i)"=>"5"}, "authenticity_token"=>"tfayQ9JB+8fJ9JPmMGCw7Xz/yugnHirHhV1K0jfFQ+k="}
+  [4;36;1mClientWorkout Create (1.0ms)[0m   [0;1mINSERT INTO "client_workouts" ("updated_at", "client_name", "trainer", "paid_amount", "duration_mins", "date_of_workout", "created_at") VALUES('2009-08-05 13:52:39', 'ggg', 'bbb', 50.0, 12, '2009-08-05', '2009-08-05 13:52:39')[0m
+Redirected to http://localhost:3000/client_workouts/4
+Completed in 257ms (DB: 1) | 302 Found [http://localhost/client_workouts]
+
+
+Processing ClientWorkoutsController#show (for 127.0.0.1 at 2009-08-05 21:52:40) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mClientWorkout Load (0.0ms)[0m   [0mSELECT * FROM "client_workouts" WHERE ("client_workouts"."id" = 4) [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/show
+Completed in 21ms (View: 11, DB: 0) | 200 OK [http://localhost/client_workouts/4]
+
+
+Processing ClientWorkoutsController#edit (for 127.0.0.1 at 2009-08-05 21:52:44) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mClientWorkout Load (0.0ms)[0m   [0;1mSELECT * FROM "client_workouts" WHERE ("client_workouts"."id" = 4) [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/edit
+Completed in 79ms (View: 69, DB: 0) | 200 OK [http://localhost/client_workouts/4/edit]
+
+
+Processing ClientWorkoutsController#update (for 127.0.0.1 at 2009-08-05 21:53:01) [PUT]
+  Parameters: {"commit"=>"Update", "client_workout"=>{"client_name"=>"ggg", "trainer"=>"bbb", "paid_amount"=>"ff", "duration_mins"=>"12", "date_of_workout(1i)"=>"2009", "date_of_workout(2i)"=>"8", "date_of_workout(3i)"=>"5"}, "authenticity_token"=>"tfayQ9JB+8fJ9JPmMGCw7Xz/yugnHirHhV1K0jfFQ+k=", "id"=>"4"}
+  [4;35;1mClientWorkout Load (0.0ms)[0m   [0mSELECT * FROM "client_workouts" WHERE ("client_workouts"."id" = 4) [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/edit
+Completed in 32ms (View: 9, DB: 0) | 200 OK [http://localhost/client_workouts/4]
+
+
+Processing ClientWorkoutsController#update (for 127.0.0.1 at 2009-08-05 21:53:15) [PUT]
+  Parameters: {"commit"=>"Update", "client_workout"=>{"client_name"=>"ggg", "trainer"=>"bbb", "paid_amount"=>"33", "duration_mins"=>"12", "date_of_workout(1i)"=>"2009", "date_of_workout(2i)"=>"8", "date_of_workout(3i)"=>"5"}, "authenticity_token"=>"tfayQ9JB+8fJ9JPmMGCw7Xz/yugnHirHhV1K0jfFQ+k=", "id"=>"4"}
+  [4;36;1mClientWorkout Load (0.0ms)[0m   [0;1mSELECT * FROM "client_workouts" WHERE ("client_workouts"."id" = 4) [0m
+  [4;35;1mClientWorkout Update (32.0ms)[0m   [0mUPDATE "client_workouts" SET "paid_amount" = 33.0, "updated_at" = '2009-08-05 13:53:15' WHERE "id" = 4[0m
+Redirected to http://localhost:3000/client_workouts/4
+Completed in 134ms (DB: 32) | 302 Found [http://localhost/client_workouts/4]
+
+
+Processing ClientWorkoutsController#show (for 127.0.0.1 at 2009-08-05 21:53:15) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mClientWorkout Load (0.0ms)[0m   [0;1mSELECT * FROM "client_workouts" WHERE ("client_workouts"."id" = 4) [0m
+Rendering template within layouts/client_workouts
+Rendering client_workouts/show
+Completed in 17ms (View: 6, DB: 0) | 200 OK [http://localhost/client_workouts/4]
